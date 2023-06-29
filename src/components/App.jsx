@@ -11,11 +11,9 @@ import { Layout } from './Layout';
 import Home from 'pages/Home';
 import { Register } from 'pages/Register';
 import { Login } from 'pages/Login';
+import { ContactsPage } from 'pages/Contacts';
 
 export const App = () => {
-  // const { isLoading, error } = useContacts();
-  // const dispatch = useDispatch();
-
   // useEffect(() => {
   //   dispatch(getContactsThunk());
   // }, [dispatch]);
@@ -26,20 +24,8 @@ export const App = () => {
         <Route index element={<Home />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/contacts" element={<ContactsPage />} />
       </Route>
     </Routes>
   );
-
-  // return (
-
-  //   <Container>
-  //     <h1>Phonebook</h1>
-  //     <Form />
-
-  //     <h2>Contacts</h2>
-  //     <Filter />
-  //     {isLoading && !error && <b>Request in progress...</b>}
-  //     <ContactsList />
-  //   </Container>
-  // );
 };
