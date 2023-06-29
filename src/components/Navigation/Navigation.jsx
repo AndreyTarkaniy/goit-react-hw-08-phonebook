@@ -3,7 +3,16 @@ import { NavLink } from 'react-router-dom';
 export const Navigation = () => {
   return (
     <nav>
-      <NavLink to="/">Home</NavLink>
+      <ul>
+        <li>
+          <NavLink to="/">Home</NavLink>
+        </li>
+        <li>
+          <NavLink to="">
+            <span>Contacts</span>
+          </NavLink>
+        </li>
+      </ul>
     </nav>
   );
 };

@@ -1,3 +1,4 @@
+// попередній contactsList
 import React from 'react';
 
 import css from 'components/contactsList/contactsList.module.css';
