@@ -11,7 +11,7 @@ import { Layout } from './Layout';
 import Home from 'pages/Home';
 import { Register } from 'pages/Register';
 import { Login } from 'pages/Login';
-import { ContactsPage } from 'pages/Contacts';
+import { ContactsPage } from 'pages/ContactsPage';
 
 export const App = () => {
   // useEffect(() => {

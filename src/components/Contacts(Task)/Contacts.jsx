@@ -4,7 +4,7 @@ import React from 'react';
 import css from 'components/Contacts(Task)/Contacts.module.css';
 import { useContacts } from 'redux/contacts/useContacts';
 
-const ContactsList = () => {
+const Contacts = () => {
   const { deleteContact, contactsNameList } = useContacts();
 
   return (
@@ -28,4 +28,4 @@ const ContactsList = () => {
   );
 };
 
-export default ContactsList;
+export default Contacts;
