@@ -4,7 +4,7 @@
   list-style: none;
 }
 
-.authNavLink {
+.link {
   display: inline-block;
   text-decoration: none;
   padding: 12px;
@@ -12,6 +12,7 @@
   color: #2a363b;
 }
 
-.authNavLink.active {
-  color: #e84a5f;
+.link:active {
+  transform: scale(1.2);
+  color: rgb(127, 34, 136);
 }

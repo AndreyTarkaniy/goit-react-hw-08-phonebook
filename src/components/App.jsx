@@ -1,24 +1,20 @@
 import { useEffect } from 'react';
 
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { Layout } from './Layout/Layout';
 
-import { RegisterPage } from 'pages/Register';
-import { LoginPage } from 'pages/Login';
-import { ContactPage } from 'pages/Contact';
-import HomePage from 'pages/Home';
 import { useDispatch } from 'react-redux';
 import { useAuth } from 'redux/auth/useAuth';
 import { refreshUser } from 'redux/auth/operations';
 
 import { PrivateRoute } from './PrivateRoute';
 import { PublicRoute } from './PublicRoute';
-// import { lazy } from 'react';
+import { lazy } from 'react';
 
-// const HomePage = lazy(() => import('pages/Home'));
-// const RegisterPage = lazy(() => import('pages/Register'));
-// const LoginPage = lazy(() => import('pages/Login'));
-// const ContactPage = lazy(() => import('pages/Contact'));
+const HomePage = lazy(() => import('pages/Home'));
+const RegisterPage = lazy(() => import('pages/Register'));
+const LoginPage = lazy(() => import('pages/Login'));
+const ContactPage = lazy(() => import('pages/Contact'));
 
 export const App = () => {
   const { isRefreshing } = useAuth();
@@ -53,6 +49,7 @@ export const App = () => {
           }
         />
       </Route>
+      <Route path="*" element={<Navigate to="/" />} />
     </Routes>
   );
 };

@@ -1,15 +1,16 @@
 import { Outlet } from 'react-router-dom';
 import { Header } from 'components/Header/Header';
 import { Suspense } from 'react';
-import css from 'components/Layout/Layout.module.css';
+
+import { Container } from 'components/container/container';
 
 export const Layout = () => {
   return (
-    <div className={css.wrap}>
+    <Container>
       <Header />
       <Suspense fallback={null}>
         <Outlet />
       </Suspense>
-    </div>
+    </Container>
   );
 };

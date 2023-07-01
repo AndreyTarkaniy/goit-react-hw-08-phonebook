@@ -8,7 +8,7 @@ import { useDispatch } from 'react-redux';
 import { getContactsThunk } from 'redux/contacts/thunkApi';
 import { useContacts } from 'redux/contacts/useContacts';
 
-export const ContactPage = () => {
+const ContactPage = () => {
   const { isLoading, error } = useContacts();
   const dispatch = useDispatch();
 
@@ -28,3 +28,5 @@ export const ContactPage = () => {
     </Container>
   );
 };
+
+export default ContactPage;

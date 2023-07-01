@@ -13,6 +13,7 @@
 .input {
   margin: 0 auto;
   border-color: rgb(50, 4, 71);
+  filter: drop-shadow(4px 4px 4px rgb(5, 19, 99));
   border-radius: 4px;
   width: 45%;
 }
