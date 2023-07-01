@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 import css from 'components/form/form.module.css';
-import { useContacts } from 'redux/contacts/useContacts';
 import { useDispatch } from 'react-redux';
+import { useContacts } from 'redux/contacts/useContacts';
+import { addContactsThunk } from 'redux/contacts/thunkApi';
 
 export const Form = () => {
-  const { contacts, addContact } = useContacts();
+  const { contacts } = useContacts();
   const dispatch = useDispatch();
 
   const [name, setName] = useState('');
@@ -28,7 +29,8 @@ export const Form = () => {
       return;
     }
 
-    dispatch(addContact({ name, number }));
+    dispatch(addContactsThunk({ name, number }));
+    // dispatch(addContact({ name, number }));
 
     reset();
   };

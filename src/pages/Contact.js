@@ -1,4 +1,4 @@
-import Contacts from 'components/Contacts(Task)/Contacts';
+import Contacts from 'components/Contacts/Contacts';
 
 import { Container } from 'components/container/container';
 import Filter from 'components/filter/filter';

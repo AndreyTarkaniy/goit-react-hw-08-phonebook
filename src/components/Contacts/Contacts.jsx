@@ -1,7 +1,7 @@
 // попередній contactsList
 import React from 'react';
 
-import css from 'components/Contacts(Task)/Contacts.module.css';
+import css from 'components/Contacts/Contacts.module.css';
 import { useContacts } from 'redux/contacts/useContacts';
 
 const Contacts = () => {
