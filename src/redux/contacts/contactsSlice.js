@@ -39,9 +39,11 @@ const contactsSlice = createSlice({
       .addCase(getContactsThunk.pending, handlePending)
       .addCase(getContactsThunk.fulfilled, handleFulfilldGet)
       .addCase(getContactsThunk.rejected, handleReject)
+
       .addCase(addContactsThunk.pending, handlePending)
       .addCase(addContactsThunk.fulfilled, handleFulfilldAdd)
       .addCase(addContactsThunk.rejected, handleReject)
+
       .addCase(deleteContactsThunk.pending, handlePending)
       .addCase(deleteContactsThunk.fulfilled, handleFulfilldDelete)
       .addCase(deleteContactsThunk.rejected, handleReject);
