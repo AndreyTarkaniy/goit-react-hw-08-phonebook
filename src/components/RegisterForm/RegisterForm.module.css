@@ -1,11 +1,32 @@
 .form {
-  width: 320px;
+  display: flex;
+
+  flex-direction: column;
+  gap: 30px;
+  width: 400px;
+
+  outline: 3px solid rgb(50, 4, 71);
+  background-color: #c7cca9;
+
+  margin: 0 auto;
+  border-radius: 5px;
+  padding: 20px;
 }
 
 .label {
   display: flex;
   flex-direction: column;
-  margin-bottom: 16px;
+  justify-content: center;
+  width: 45%;
+
+  font-size: 20px;
+
+  color: blueviolet;
+}
+
+.input {
+  border-color: rgb(50, 4, 71);
+  border-radius: 4px;
 }
 
 .btn {
@@ -19,11 +40,9 @@
 
   color: rgb(16, 3, 63);
   background-color: rgb(10, 208, 243);
-  border-radius: 5px;
 }
 
-.btn:hover,
-.btn:focus {
+.btn:hover {
   color: rgb(242, 244, 247);
-  background-color: rgb(138, 210, 238);
+  background-color: rgb(59, 143, 10);
 }
