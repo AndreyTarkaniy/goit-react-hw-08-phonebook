@@ -7,6 +7,10 @@
 .username {
   font-weight: 700;
 }
+.span {
+  font-size: 30px;
+  color: rgb(233, 36, 10);
+}
 .btn {
   width: 100px;
   cursor: pointer;

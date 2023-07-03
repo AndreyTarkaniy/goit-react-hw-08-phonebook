@@ -8,7 +8,9 @@ export const UserMenu = () => {
   const { user } = useAuth();
   return (
     <div className={css.wrapper}>
-      <p className={css.username}>Welcome {user.name}</p>
+      <p className={css.username}>
+        Welcome <span className={css.span}>{user.name}</span>
+      </p>
       <button
         className={css.btn}
         type="button"
