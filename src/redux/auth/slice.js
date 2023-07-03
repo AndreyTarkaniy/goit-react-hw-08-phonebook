@@ -11,35 +11,67 @@ const initialState = {
 const authSlice = createSlice({
   name: 'auth',
   initialState,
-  extraReducers: {
-    [register.fulfilled](state, action) {
-      state.user = action.payload.user;
-      state.token = action.payload.token;
-      state.isLoggedIn = true;
-    },
-    [logIn.fulfilled](state, action) {
-      state.user = action.payload.user;
-      state.token = action.payload.token;
-      state.isLoggedIn = true;
-    },
-    [logOut.fulfilled](state) {
-      state.user = { name: null, email: null };
-      state.token = null;
-      state.isLoggedIn = false;
-    },
-    [refreshUser.pending](state) {
-      state.isRefreshing = true;
-    },
-    [refreshUser.fulfilled](state, action) {
-      state.user = action.payload;
-      state.isLoggedIn = true;
-      state.isRefreshing = false;
-    },
-    [refreshUser.rejected](state) {
-      state.isRefreshing = false;
-      state.token = null;
-    },
+
+  extraReducers: builder => {
+    builder
+      .addCase(register.fulfilled, (state, { payload }) => {
+        state.user = payload.user;
+        state.token = payload.token;
+        state.isLoggedIn = true;
+      })
+      .addCase(logIn.fulfilled, (state, { payload }) => {
+        state.user = payload.user;
+        state.token = payload.token;
+        state.isLoggedIn = true;
+      })
+      .addCase(logOut.fulfilled, (state, { payload }) => {
+        state.user = payload.user;
+        state.token = payload.token;
+        state.isLoggedIn = false;
+      })
+      .addCase(refreshUser.pending, state => {
+        state.isRefreshing = true;
+      })
+      .addCase(refreshUser.fulfilled, (state, { payload }) => {
+        state.user = payload.user;
+        state.isLoggedIn = true;
+        state.isRefreshing = false;
+      })
+      .addCase(refreshUser.rejected, state => {
+        state.isRefreshing = false;
+        state.token = null;
+      });
   },
+
+  // extraReducers: {
+  //   [register.fulfilled](state, action) {
+  //     state.user = action.payload.user;
+  //     state.token = action.payload.token;
+  //     state.isLoggedIn = true;
+  //   },
+  //   [logIn.fulfilled](state, action) {
+  //     state.user = action.payload.user;
+  //     state.token = action.payload.token;
+  //     state.isLoggedIn = true;
+  //   },
+  //   [logOut.fulfilled](state) {
+  //     state.user = { name: null, email: null };
+  //     state.token = null;
+  //     state.isLoggedIn = false;
+  //   },
+  //   [refreshUser.pending](state) {
+  //     state.isRefreshing = true;
+  //   },
+  //   [refreshUser.fulfilled](state, action) {
+  //     state.user = action.payload;
+  //     state.isLoggedIn = true;
+  //     state.isRefreshing = false;
+  //   },
+  //   [refreshUser.rejected](state) {
+  //     state.isRefreshing = false;
+  //     state.token = null;
+  //   },
+  // },
 });
 
 export const authReducer = authSlice.reducer;
