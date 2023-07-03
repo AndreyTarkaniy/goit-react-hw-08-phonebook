@@ -49,6 +49,7 @@ export const Form = () => {
           className={css.input}
           type="text"
           name="name"
+          required
           value={name}
           onChange={handleChange}
         />
@@ -60,6 +61,7 @@ export const Form = () => {
           className={css.input}
           type="tel"
           name="number"
+          required
           value={number}
           onChange={handleChange}
         />
